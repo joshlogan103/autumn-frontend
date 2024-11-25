@@ -1,9 +1,55 @@
+.three-keys {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 85%; /* Constrain the overall width */
+  margin: 0 auto; /* Center the entire section horizontally */
+  padding: 10px 0; /* Add vertical padding */
+  box-sizing: border-box; /* Include padding in the width */
+}
+
+.three-keys.rt-Flex {
+  justify-content: space-between !important; /* Center the content and override flex-start */
+}
+
 .key-section {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  text-align: center;
+  width: 30%;
+  justify-content: space-around;
+  box-sizing: border-box; /* Prevent overflow due to padding */
+}
+
+.key-title {
+  font-weight: 400;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  font-family: anton;
 }
 
 .key-gif {
+  max-width: 100%; /* Ensure GIF fits within the section */
   height: 140px;
+  margin-bottom: 10px;
+}
+
+.key-explanation {
+  font-size: 1.5rem;
+  height: 80px;
+}
+
+@media (max-width: 768px) {
+  .three-keys {
+    flex-direction: column; /* Stack mini sections vertically */
+    align-items: center;
+    width: 100%; /* Take up full width on small screens */
+    gap: 20px; /* Add spacing between stacked subsections */
+  }
+
+  .key-section {
+    width: 90%; /* Make each section take most of the screen width */
+    margin-bottom: 20px; /* Add spacing between stacked subsections */
+  }
 }

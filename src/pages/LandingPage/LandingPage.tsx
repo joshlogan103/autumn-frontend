@@ -7,15 +7,21 @@ const LandingPage = () => {
   return (
     <>
       <Flex className="landing-page">
-        <Flex className="vs-section">
+
+        <div className="vs-section">
           <div className="value-statement">
-            We turn <span className="underline">customers</span> into a high performing <span className="underline">revenue</span> <span className="underline">channel</span>
+            WE TURN <span className="styleword">CUSTOMERS</span> INTO A HIGH PERFORMING <span className="styleword">REVENUE</span> <span className="styleword">CHANNEL</span>
           </div>
-        </Flex>
-        <div className="how-it-works">
-          How it works
         </div>
-        <ValueExplanation />
+
+        <div className="how-it-works">
+          HOW IT WORKS
+        </div>
+
+        <div className="value-explanation-container">
+          <ValueExplanation />
+        </div>
+
       </Flex>
     </>
   )
