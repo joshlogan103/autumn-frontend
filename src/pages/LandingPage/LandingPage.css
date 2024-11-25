@@ -38,10 +38,18 @@
   font-size: 4rem;
   font-weight: 400;
   text-align: left;
-  margin: 40px 0 10px 0;
+  margin: 40px 0 0 0;
   margin-left: 120px;
   font-family: anton;
   width: 100%; /* Ensure it spans the container */
+}
+
+.value-explanation-container {
+  margin: 10px 0;
+}
+
+.perf-and-use-container {
+  margin-top: 50px;
 }
 
 body, html {

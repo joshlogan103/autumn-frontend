@@ -1,0 +1,39 @@
+.perf-and-use-container {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  width: 85%; /* Constrain the overall width */
+  margin: 40px auto; /* Center the entire section horizontally */
+  padding: 10px 0; /* Add vertical padding */
+  box-sizing: border-box; /* Include padding in the width */
+}
+
+.perf-and-use-container.rt-Flex {
+  justify-content: space-between !important; /* Center the content and override flex-start */
+}
+
+.pau-title {
+  font-family: anton;
+  font-size: 3rem;
+  color: cadetblue;
+}
+
+.performance-container {
+  flex-direction: column;
+}
+
+.performance-items {
+  flex-direction: column;
+  font-family: anton;
+  font-size: 2rem;
+  max-width: 500px;
+}
+
+.performance-number {
+  background-color: cadetblue;
+  color: white;
+}
+
+.use-cases-container {
+  flex-direction: column;
+}
