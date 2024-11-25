@@ -1,0 +1,9 @@
+.key-section {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.key-gif {
+  height: 140px;
+}

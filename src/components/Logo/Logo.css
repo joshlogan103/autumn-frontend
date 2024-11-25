@@ -1,0 +1,19 @@
+
+  .logo {
+    height: 40px;
+    margin-left: 40px;
+    margin-top: 0px;
+    padding: 12px 0px 10px 0px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .logo:hover {
+    background-color: transparent; /* Ensure no background on hover */
+    box-shadow: none;
+  }
+
+  .logo:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: none; /* Remove focus shadow */
+  }

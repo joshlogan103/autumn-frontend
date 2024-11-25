@@ -1,0 +1,24 @@
+.landing-page {
+  height: 100vh; 
+  justify-content: center;
+  align-items: center;
+}
+
+.vs-section {
+  width: 100%; 
+  height: 100vh; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+}
+
+.value-statement {
+  font-size: 2rem; 
+  max-width: 800px;
+  padding: 20px; 
+}
+
+.underline {
+  text-decoration: underline; 
+}
