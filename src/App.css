@@ -1,22 +1,24 @@
 html, body, #root {
-  padding: 0px;
-  margin: 0px;
+  height: 100%; /* Ensure the root container spans the full viewport */
+  padding: 0;
+  margin: 0;
 }
 
 .main-container {
   margin: 0;
-  height: 100vh;
-  width: 100vw;
+  height: 100%; /* Full height of the parent (#root) */
+  width: 100%; /* Full width */
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
 }
 
-
 .body-container {
-  height: 100%;
-  width: 100%;
+  height: calc(100% - 60px); /* Subtract the margin-top for proper sizing */
+  width: 100%; /* Full width */
   margin-top: 60px;
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Grow to fill remaining space */
 }
