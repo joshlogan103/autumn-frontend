@@ -45,11 +45,10 @@
     flex-direction: column; /* Stack mini sections vertically */
     align-items: center;
     width: 100%; /* Take up full width on small screens */
-    gap: 20px; /* Add spacing between stacked subsections */
+    gap: 100px; /* Add spacing between stacked subsections */
   }
 
   .key-section {
     width: 90%; /* Make each section take most of the screen width */
-    margin-bottom: 20px; /* Add spacing between stacked subsections */
   }
 }

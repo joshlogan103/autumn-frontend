@@ -69,5 +69,7 @@
   .performance-items, .use-case-items {
     width: 90%; /* Adjust width for smaller screens */
     font-size: 2rem;
+    margin-bottom: 10px;
+    gap: 20px;
   }
 }

@@ -15,7 +15,7 @@
 
 @media (max-width: 768px) {
   .companies-container {
-    margin:40px auto;
+    margin: 0px auto 40px;
     gap: 40px;
     flex-direction: column;
     column-count: 2;
