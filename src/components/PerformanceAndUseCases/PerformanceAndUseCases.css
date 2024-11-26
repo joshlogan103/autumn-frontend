@@ -1,39 +1,73 @@
 .perf-and-use-container {
   display: flex;
   flex-direction: row;
-  align-items: top;
-  width: 85%; /* Constrain the overall width */
-  margin: 40px auto; /* Center the entire section horizontally */
-  padding: 10px 0; /* Add vertical padding */
-  box-sizing: border-box; /* Include padding in the width */
+  justify-content: space-between; /* Ensures even spacing between child containers */
+  align-items: flex-start; /* Align child containers at the top */
+  width: 100%; /* Full width for the container */
+  max-width: 1200px; /* Constrain overall width on large screens */
+  margin: 40px auto; /* Center horizontally with top/bottom spacing */
+  padding: 0 40px; /* Even padding on left and right */
+  gap: 40px; /* Even spacing between the performance and use case containers */
+  box-sizing: border-box; /* Include padding in the width calculation */
 }
 
-.perf-and-use-container.rt-Flex {
-  justify-content: space-between !important; /* Center the content and override flex-start */
+.performance-container, .use-cases-container {
+  display: flex;
+  flex-direction: column; /* Stack content vertically in each section */
+  align-items: center; /* Center align the content horizontally */
+  width: calc((100% - 80px) / 2); /* Split the space evenly between the two containers, accounting for gap */
+  box-sizing: border-box; /* Ensure padding/borders are included in width */
 }
 
 .pau-title {
-  font-family: anton;
+  font-family: "Anton", sans-serif; /* Ensure correct font */
   font-size: 3rem;
-  color: cadetblue;
-}
-
-.performance-container {
-  flex-direction: column;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center; /* Center the title */
 }
 
 .performance-items {
-  flex-direction: column;
-  font-family: anton;
-  font-size: 2rem;
-  max-width: 500px;
+  display: flex;
+  flex-direction: column; /* Stack performance items vertically */
+  font-family: "Anton", sans-serif;
+  font-size: 1.8rem;
+  max-width: 450px;
+  margin-top: 20px;
+  gap: 10px; /* Add spacing between individual performance items */
 }
 
 .performance-number {
-  background-color: cadetblue;
+  background-color: #296e7f;
   color: white;
+  padding: 5px 10px; /* Reduce vertical padding */
+  text-align: center;
+  line-height: 1.9; /* Tighten line spacing */
+  margin-bottom: 10px; /* Add spacing below for white space */
 }
 
-.use-cases-container {
-  flex-direction: column;
+
+.use-case-items {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 20px; /* Add spacing between use case items */
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .perf-and-use-container {
+    flex-direction: column; /* Stack containers vertically on smaller screens */
+    align-items: center;
+    padding: 0 20px; /* Adjust padding for smaller screens */
+    gap: 40px; /* Reduce gap for stacked layout */
+    margin-top: 20px;
+  }
+
+  .performance-container, .use-cases-container {
+    width: 100%; /* Full width for stacked containers */
+  }
+
+  .performance-items, .use-case-items {
+    width: 90%; /* Adjust width for smaller screens */
+  }
 }

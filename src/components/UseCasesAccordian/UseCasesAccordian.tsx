@@ -82,7 +82,7 @@ const AccordionDemo = () => (
       </AccordionContent>
     </Accordion.Item>
 
-    <Accordion.Item className="AccordionItem" value="item-3">
+    <Accordion.Item className="AccordionItem" value="item-4">
       <AccordionTrigger>STRATEGIC SUPPORT</AccordionTrigger>
       <AccordionContent>
         <div className="AccordionContentText">

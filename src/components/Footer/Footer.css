@@ -1,0 +1,85 @@
+.footer-body {
+  display: flex; /* Ensure Flexbox layout */
+  flex-direction: row; /* Arrange items in a row */
+  justify-content: space-between; /* Space items evenly */
+  align-items: center; /* Align items at the top */
+  width: 100vw; /* Full width */
+  height: calc(50vh - 30px);
+  background-color: rgb(244, 244, 244); /* Background color */
+  padding: 0 120px; /* Equal padding on left and right sides */
+  box-sizing: border-box; /* Include padding in width */
+  gap: 40px; /* Space between the columns */
+}
+
+.footer-statement, .email-container {
+  flex: 1; /* Make both columns take up equal space */
+}
+
+.footer-statement {
+  margin-top: 20px;
+  padding: 20px;
+  font-family: anton;
+  font-size: 1.8rem;
+  text-align: left; /* Align text to the left */
+}
+
+.email-container {
+  font-family: anton;
+  margin: 20px 0; /* Adjust vertical spacing only */
+}
+
+.email-prompt {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+}
+
+.demo-button {
+  margin-top: 10px;
+  font-family: anton;
+}
+
+.sub-footer {
+  height: calc(50vh - 30px);
+  width: 100vw;
+  background-color: rgb(234, 234, 234);
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.newsletter-section {
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  margin-left: 60px;
+}
+
+.get-insights-title {
+  font-family: anton;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.get-insights-text {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.company-info {
+  margin-left: 400px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-name {
+  font-family: anton;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.address {
+  font-size: .8rem;
+  text-align: center;
+}
+

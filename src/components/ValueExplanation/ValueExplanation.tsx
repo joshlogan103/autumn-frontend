@@ -12,7 +12,7 @@ const ValueExplanation = () => {
           <div className="key-explanation">Turn loyal customers into champions</div>
         </Flex>
         <Flex className="key-section">
-          <div className="key-title">MAP <br/> NETWORKS</div>
+          <div className="key-title">MAP NETWORKS</div>
           <img src="../../../images/networksGif.gif" alt="revenueGIF" className="key-gif" />
           <div className="key-explanation">Automate the process of identifying valuable connections</div>
         </Flex>

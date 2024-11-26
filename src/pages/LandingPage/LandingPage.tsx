@@ -2,6 +2,7 @@ import "./LandingPage.css";
 import { Flex } from "@radix-ui/themes"
 import ValueExplanation from "../../components/ValueExplanation/ValueExplanation";
 import PerformanceAndUseCases from "../../components/PerformanceAndUseCases/PerformanceAndUseCases";
+import Footer from "../../components/Footer/Footer";
 
 const LandingPage = () => {
   
@@ -25,6 +26,10 @@ const LandingPage = () => {
 
         <div className="perf-and-use-container">
           <PerformanceAndUseCases />
+        </div>
+
+        <div className="footer-container">
+          <Footer/>
         </div>
 
       </Flex>
