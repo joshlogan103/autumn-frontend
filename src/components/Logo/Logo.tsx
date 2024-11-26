@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <>
       <NavLink to='/'>
-        <img src='../../images/autumnLogo.jpeg' alt='Logo' className='logo'/>
+        <img src='/images/autumnLogo.jpeg' alt='Logo' className='logo'/>
       </NavLink>
     </>
   )
