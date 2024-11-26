@@ -3,7 +3,7 @@
   flex-direction: row; /* Arrange items in a row */
   justify-content: space-between; /* Space items evenly */
   align-items: center; /* Align items at the top */
-  width: 100vw; /* Full width */
+  width: 100%; /* Full width */
   height: calc(50vh - 30px);
   background-color: rgb(244, 244, 244); /* Background color */
   padding: 0 120px; /* Equal padding on left and right sides */
@@ -41,7 +41,7 @@
 
 .sub-footer {
   height: calc(50vh - 30px);
-  width: 100vw;
+  width: 100%;
   background-color: rgb(234, 234, 234);
   align-items: center;
   justify-content: flex-start;
