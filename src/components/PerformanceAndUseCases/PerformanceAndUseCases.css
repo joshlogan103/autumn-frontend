@@ -4,7 +4,6 @@
   justify-content: space-between; /* Ensures even spacing between child containers */
   align-items: flex-start; /* Align child containers at the top */
   width: 100%; /* Full width for the container */
-  max-width: 1200px; /* Constrain overall width on large screens */
   margin: 40px auto; /* Center horizontally with top/bottom spacing */
   padding: 0 40px; /* Even padding on left and right */
   gap: 40px; /* Even spacing between the performance and use case containers */
@@ -31,8 +30,8 @@
   display: flex;
   flex-direction: column; /* Stack performance items vertically */
   font-family: "Anton", sans-serif;
-  font-size: 1.8rem;
-  max-width: 450px;
+  font-size: 2.2rem;
+  max-width: 90%;
   margin-top: 20px;
   gap: 10px; /* Add spacing between individual performance items */
 }
@@ -69,5 +68,6 @@
 
   .performance-items, .use-case-items {
     width: 90%; /* Adjust width for smaller screens */
+    font-size: 2rem;
   }
 }

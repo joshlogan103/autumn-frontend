@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 60px;
+  height: 80px;
   background-color: white;
   width: 100%;
   z-index: 2000;
@@ -20,6 +20,7 @@
   background-color: transparent;
   color: black;
   box-shadow: black;
+  height: 40px;
 }
 
 .menu-root button:hover {

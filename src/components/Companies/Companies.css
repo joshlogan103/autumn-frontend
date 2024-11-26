@@ -1,0 +1,31 @@
+.companies-container {
+  margin: 50px auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.company-logo {
+  max-width: 200px;
+}
+
+.company-logo-alt {
+  max-width: 250px;
+}
+
+@media (max-width: 768px) {
+  .companies-container {
+    margin:40px auto;
+    gap: 40px;
+    flex-direction: column;
+    column-count: 2;
+  }
+
+  .company-logo {
+    max-width: 30%;
+  }
+  
+  .company-logo-alt {
+    max-width: 40%;
+  }
+}

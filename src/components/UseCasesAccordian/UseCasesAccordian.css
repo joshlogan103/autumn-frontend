@@ -45,12 +45,12 @@ h3 {
 	font-family: inherit;
 	background-color: transparent;
 	padding: 0 20px;
-	height: 45px;
+	height: 55px;
 	flex: 1;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	font-size: 15px;
+	font-size: 1.4rem;
 	line-height: 1;
 	color: black;
 	box-shadow: 0 1px 0 var(--mauve-6);
@@ -64,7 +64,7 @@ h3 {
 
 .AccordionContent {
 	overflow: hidden;
-	font-size: 15px;
+	font-size: 1.2rem;
 	color: rgb(66, 66, 66);
 	background-color: var(--mauve-2);
 }

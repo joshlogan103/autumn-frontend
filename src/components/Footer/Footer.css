@@ -36,7 +36,7 @@ body, html {
 .footer-statement {
   margin-top: 20px;
   font-family: anton;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   text-align: left; /* Align text to the left */
   max-width: 45%;
 }
@@ -51,7 +51,7 @@ body, html {
 }
 
 .email-prompt {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .demo-button {
@@ -80,11 +80,11 @@ body, html {
 
 .get-insights-title {
   font-family: anton;
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 
 .get-insights-text {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .get-insights-submit {
@@ -97,13 +97,13 @@ body, html {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  text-align: right; /* Align text to the right */
-  padding-left: 300px;
+  text-align: center; /* Align text to the right */
+  padding-left: 350px;
 }
 
 .company-name {
   font-family: anton;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 .address {
@@ -130,6 +130,7 @@ body, html {
     padding: 0;
     max-width: 80%;
     text-align: center;
+    font-size: 2rem;
   }
 
   .email-container {
@@ -143,6 +144,14 @@ body, html {
     align-items: center;
     height: auto; /* Let height adjust based on content */
     padding: 20px; /* Reduce padding for smaller screens */
+  }
+
+  .get-insights-title {
+    font-size: 2rem;
+  }
+
+  .get-insights-text {
+    max-width: 100%;
   }
 
   .newsletter-section, .company-info {
