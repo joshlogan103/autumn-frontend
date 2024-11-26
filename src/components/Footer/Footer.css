@@ -1,85 +1,164 @@
-.footer-body {
-  display: flex; /* Ensure Flexbox layout */
-  flex-direction: row; /* Arrange items in a row */
-  justify-content: space-between; /* Space items evenly */
-  align-items: center; /* Align items at the top */
-  width: 100%; /* Full width */
-  height: calc(50vh - 30px);
-  background-color: rgb(244, 244, 244); /* Background color */
-  padding: 0 120px; /* Equal padding on left and right sides */
-  box-sizing: border-box; /* Include padding in width */
-  gap: 40px; /* Space between the columns */
+/* General Fix for Overflow */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box; /* Ensure consistent sizing */
 }
 
+/* Footer Body */
+.footer-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw; /* Full viewport width */
+  height: calc(50vh - 30px);
+  background-color: rgb(244, 244, 244); /* Background color */
+  gap: 40px;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Evenly space items */
+  align-items: center;
+  width: 100%; /* Full width inside parent */
+  padding: 0 120px; /* Padding for inner content */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Footer Content Columns */
 .footer-statement, .email-container {
-  flex: 1; /* Make both columns take up equal space */
+  flex: 1; /* Equal column widths */
 }
 
 .footer-statement {
   margin-top: 20px;
-  padding: 20px;
   font-family: anton;
   font-size: 1.8rem;
   text-align: left; /* Align text to the left */
+  max-width: 45%;
 }
 
 .email-container {
   font-family: anton;
-  margin: 20px 0; /* Adjust vertical spacing only */
+  margin: 20px 0; /* Adjust vertical spacing */
+  display: flex;
+  flex-direction: column; /* Stack email elements */
+  gap: 10px; /* Add space between email elements */
+  padding-left: 200px;
 }
 
 .email-prompt {
-  margin-top: 10px;
   font-size: 1.2rem;
-  padding-bottom: 5px;
 }
 
 .demo-button {
-  margin-top: 10px;
   font-family: anton;
 }
 
+/* Sub-Footer */
 .sub-footer {
-  height: calc(50vh - 30px);
-  width: 100%;
-  background-color: rgb(234, 234, 234);
+  display: flex; /* Flex layout for child elements */
+  justify-content: space-between; /* Space between columns */
   align-items: center;
-  justify-content: flex-start;
+  width: 100vw; /* Full viewport width */
+  height: calc(50vh - 30px);
+  background-color: rgb(234, 234, 234);
+  padding: 0 120px; /* Padding for inner content */
+  box-sizing: border-box;
 }
 
 .newsletter-section {
+  display: flex;
   flex-direction: column;
-  align-items: left;
   justify-content: center;
-  margin-left: 60px;
+  max-width: 45%;
+  gap: 10px; /* Add spacing between items */
 }
 
 .get-insights-title {
   font-family: anton;
   font-size: 2rem;
-  margin-bottom: 10px;
 }
 
 .get-insights-text {
   font-size: 1rem;
-  margin-bottom: 20px;
+}
+
+.get-insights-submit {
+  display: flex;
+  gap: 10px; /* Add space between input and button */
 }
 
 .company-info {
-  margin-left: 400px;
+  display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  text-align: right; /* Align text to the right */
+  padding-left: 300px;
 }
 
 .company-name {
   font-family: anton;
   font-size: 1.6rem;
-  margin-bottom: 10px;
 }
 
 .address {
-  font-size: .8rem;
-  text-align: center;
+  font-size: 0.8rem;
 }
 
+/* Responsiveness for Smaller Screens */
+@media (max-width: 768px) {
+  /* Switch footer body layout to column */
+  .footer-body {
+    flex-direction: column;
+    height: auto; /* Let height adjust based on content */
+    padding: 20px; /* Reduce padding for smaller screens */
+  }
+
+  .footer-content {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    gap: 20px; /* Add spacing between sections */
+    padding: 0; /* Remove outer padding */
+  }
+
+  .footer-statement {
+    padding: 0;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  .email-container {
+    text-align: center;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .sub-footer {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    height: auto; /* Let height adjust based on content */
+    padding: 20px; /* Reduce padding for smaller screens */
+  }
+
+  .newsletter-section, .company-info {
+    align-items: center;
+    text-align: center; /* Center-align text */
+    margin-left: 0 auto;
+    padding-left: 0 auto;
+  }
+
+  .company-info {
+    margin-top: 40px;
+    padding-left: 0;
+  }
+
+  .get-insights-submit {
+    flex-direction: column; /* Stack input and button */
+    align-items: center;
+  }
+}
