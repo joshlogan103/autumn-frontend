@@ -7,7 +7,7 @@ import { Theme } from "@radix-ui/themes";
 import { BrowserRouter } from "react-router-dom";
 
 // Use a non-null assertion to ensure TypeScript treats the element as non-null
-const rootElement = document.getElementById("root")!;
+const rootElement = document.getElementById("root") as HTMLElement;
 
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
