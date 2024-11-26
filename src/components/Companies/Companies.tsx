@@ -1,5 +1,5 @@
 import { Flex } from '@radix-ui/themes';
-import './companies.css';
+import './Companies.css';
 
 const Companies = () => {
 

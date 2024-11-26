@@ -2,7 +2,7 @@ import "./LandingPage.css";
 import { Flex } from "@radix-ui/themes"
 import ValueExplanation from "../../components/ValueExplanation/ValueExplanation";
 import PerformanceAndUseCases from "../../components/PerformanceAndUseCases/PerformanceAndUseCases";
-import Companies from "../../components/Companies/companies";
+import Companies from "../../components/Companies/Companies.tsx";
 import Footer from "../../components/Footer/Footer";
 
 const LandingPage = () => {
