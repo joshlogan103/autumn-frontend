@@ -148,17 +148,27 @@ body, html {
   .newsletter-section, .company-info {
     align-items: center;
     text-align: center; /* Center-align text */
-    margin-left: 0 auto;
-    padding-left: 0 auto;
+    margin: 0 auto;
+    padding: 0; /* Remove any padding affecting centering */
   }
 
   .company-info {
     margin-top: 40px;
-    padding-left: 0;
   }
 
+  /* Fix for "Get Insights" submit button alignment */
   .get-insights-submit {
     flex-direction: column; /* Stack input and button */
-    align-items: center;
+    align-items: center; /* Center-align the button and input */
+    width: 100%; /* Ensure it spans the container width */
+    gap: 10px; /* Space between input and button */
+    margin-top: 10px; /* Add spacing from other elements */
+  }
+
+  /* Ensure input and button are centered */
+  .get-insights-submit input,
+  .get-insights-submit button {
+    margin: 0 auto; /* Center-align both input and button */
   }
 }
+
