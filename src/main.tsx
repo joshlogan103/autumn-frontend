@@ -8,11 +8,8 @@ import { BrowserRouter } from "react-router-dom";
 
 const rootElement = document.getElementById("root");
 
-if (!rootElement) {
-  throw new Error("Root element with id 'root' not found in the DOM");
-}
-
-ReactDOM.createRoot(rootElement).render(
+// Use a non-null assertion to inform TypeScript that rootElement will always exist
+ReactDOM.createRoot(rootElement!).render(
   <React.StrictMode>
     <Theme accentColor="cyan" appearance="light">
       <BrowserRouter>
@@ -21,5 +18,3 @@ ReactDOM.createRoot(rootElement).render(
     </Theme>
   </React.StrictMode>
 );
-
-
