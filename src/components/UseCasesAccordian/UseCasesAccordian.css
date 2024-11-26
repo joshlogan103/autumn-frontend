@@ -10,7 +10,7 @@ h3 {
 
 .AccordionRoot {
 	border-radius: 6px;
-	width: 300px;
+	width: 400px;
 	background-color: var(--mauve-6);
 	box-shadow: 0 2px 10px var(--black-a4);
 }
@@ -65,7 +65,7 @@ h3 {
 .AccordionContent {
 	overflow: hidden;
 	font-size: 15px;
-	color: var(--mauve-11);
+	color: rgb(66, 66, 66);
 	background-color: var(--mauve-2);
 }
 .AccordionContent[data-state="open"] {
@@ -103,4 +103,10 @@ h3 {
 	to {
 		height: 0;
 	}
+}
+
+@media (max-width: 768px) {
+  .AccordionRoot {
+    width: 100%; /* Take up full width on small screens */
+  }
 }
