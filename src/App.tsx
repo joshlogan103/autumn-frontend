@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from "./components/NavBar/NavBar";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
+import PoC from "./pages/PoC/PoC";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/poc" element={<PoC />} />
           </Routes>
         </div>
       </div>

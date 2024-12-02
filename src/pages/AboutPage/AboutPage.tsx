@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <>
       <Flex>
-
+        <Flex className="temp">This is the About page.</Flex>
       </Flex>
     </>
   )
