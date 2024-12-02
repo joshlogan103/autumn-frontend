@@ -67,3 +67,17 @@
   font-family: anton;
   font-size: 3rem;
 }
+
+.reward-terms-details {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 1.4rem;
+}
+
+.how-to-upload-section {
+  margin: 40px auto;
+}
+
+

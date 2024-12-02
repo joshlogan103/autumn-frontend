@@ -1,0 +1,60 @@
+.how-to-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background for the container */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.how-to-upload-title {
+  font-size: 2rem;
+  font-family: anton;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.how-to-upload-instructions {
+  width: 100%;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 1.4rem;
+  gap: 10px;
+}
+
+.step-number {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.step-text {
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Alternating backgrounds */
+.cyan-background {
+  background-color: #e0f7fa; /* Cyan for even steps */
+}
+
+.white-background {
+  background-color: #ffffff; /* White for odd steps */
+}
+
+/* Optional: Rounded corners for the last item */
+.step-item:last-child {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px)
