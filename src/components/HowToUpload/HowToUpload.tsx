@@ -33,22 +33,19 @@ const HowToUpload = () => {
         <div className="how-to-upload-title">HOW TO UPLOAD</div>
         <Flex className="how-to-upload-instructions" direction="column">
           {steps.map((step, index) => (
-            <Flex
-              key={index}
-              className={`step-item ${
-                index % 2 === 0 ? "cyan-background" : "white-background"
-              }`}
-              align="center"
-            >
-              <div className="step-number">{index + 1}.</div>
-              <div className="step-text">{step}</div>
-            </Flex>
+            <React.Fragment key={index}>
+              <Flex className="step-item" align="center">
+                <div className="step-number">{index + 1}.</div>
+                <div className="step-text">{step}</div>
+              </Flex>
+              {index < steps.length - 1 && <div className="step-divider" />}
+            </React.Fragment>
           ))}
         </Flex>
       </Flex>
       <Dialog.Root>
         <Dialog.Trigger>
-          <Button className="upload-csv">UPLOAD</Button>
+          <Button size="3" className="upload-csv">UPLOAD CSV</Button>
         </Dialog.Trigger>
 
         <Dialog.Content maxWidth="450px">
@@ -73,7 +70,6 @@ const HowToUpload = () => {
               </Text>
             )}
           </Flex>
-
 
           <Flex gap="3" mt="4" justify="end">
             <Dialog.Close>

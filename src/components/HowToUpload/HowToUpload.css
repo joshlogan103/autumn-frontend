@@ -48,21 +48,14 @@
   color: #333;
 }
 
-/* Alternating backgrounds */
-.cyan-background {
-  background-color: #e0f7fa; /* Cyan for even steps */
+/* Line separator between steps */
+.step-divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0;
 }
 
-.white-background {
-  background-color: #ffffff; /* White for odd steps */
-}
-
-/* Optional: Rounded corners for the last item */
-.step-item:last-child {
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-}
-
+/* Dialog and input styles remain unchanged */
 .dialog-title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -88,7 +81,6 @@
   font-size: 1.2rem;
 }
 
-/* Wrapper for the file input */
 .file-input-wrapper {
   display: inline-block;
   position: relative;
@@ -96,7 +88,6 @@
   cursor: pointer;
 }
 
-/* Custom button style */
 .file-input-button {
   display: inline-block;
   padding: 10px 20px;
@@ -107,10 +98,9 @@
   text-align: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
   transition: background-color 0.3s ease, transform 0.2s ease;
-  font-family: 'Helvetica Nueue', Arial, Helvetica, sans-serif
+  font-family: Arial, sans-serif;
 }
 
-/* Hover and active effects */
 .file-input-button:hover {
   background-color: var(--accent-10);
 }
@@ -119,7 +109,6 @@
   transform: scale(0.95);
 }
 
-/* Hide the native file input */
 .file-input-hidden {
   position: absolute;
   top: 0;
@@ -129,4 +118,3 @@
   opacity: 0;
   cursor: pointer;
 }
-

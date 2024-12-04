@@ -67,10 +67,12 @@
   .node {
     width: 250px;
     height: 80px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
-  .flowchart-container {
-    height: auto; /* Allow auto height for smaller screens */
+
+
+  .arrows {
+    display: none;
   }
 }
