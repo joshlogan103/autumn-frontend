@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Companies from "../../components/Companies/Companies";
 import Footer from "../../components/Footer/Footer";
 import HowToUpload from "../../components/HowToUpload/HowToUpload";
+import HowItWorks from "../../components/HowItWorks/HowItWorks";
 
 const PoC = () => {
   const section3Ref = useRef<HTMLDivElement>(null);
@@ -31,12 +32,11 @@ const PoC = () => {
         <Flex className="section-2">
           <Flex className="s1-wrapper">
             <Flex className="s1-text">
-              AUTUMN HELPS COMPANIES FIND MORE HAPPY CUSTOMERS BY LEVERAGING
-              THEIR BEST CUSTOMERS’ NETWORKS
+              AUTUMN HELPS COMPANIES FIND MORE HAPPY CUSTOMERS BY LEVERAGING THEIR BEST CUSTOMERS’ NETWORKS
             </Flex>
           </Flex>
           <div className="get-started-wrapper">
-            <Button className="get-started-button" onClick={handleGetStarted}>
+            <Button size="3" className="get-started-button" onClick={handleGetStarted}>
               GET STARTED
             </Button>
           </div>
@@ -56,6 +56,10 @@ const PoC = () => {
             Visa gift-card, amazon gift-card, or a donation to the charity of your choice
             </div>
           </Flex>
+        </Flex>
+
+        <Flex className="how-it-works-section">
+          <HowItWorks />
         </Flex>
 
         <Flex className="how-to-upload-section">

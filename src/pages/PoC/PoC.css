@@ -16,16 +16,16 @@
 }
 
 .section-2 {
-  flex-direction: column; /* Children are laid out in a row */
-  align-items: center; /* Align items vertically in the center */
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
 .s1-wrapper {
-  display: flex; /* Ensure flex container */
-  flex-direction: row; /* Children are laid out in a row */
-  align-items: center; /* Align items vertically in the center */
-  justify-content: center; /* Align items horizontally in the center */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
   height: 340px;
   margin-top: 40px;
@@ -33,15 +33,15 @@
 }
 
 .s1-text {
-  display: flex; /* Ensure this is treated as a flex container */
-  flex-direction: column; /* Stack children vertically if needed */
-  align-items: center; /* Center contents horizontally */
-  justify-content: center; /* Center contents vertically */
-  width: 60%; /* Constrain width for better readability */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
   font-size: 2.5rem;
-  text-align: center; /* Ensure text itself is centered */
+  text-align: center;
   font-family: anton;
-  margin: 0 auto; /* Center horizontally in non-flex cases */
+  margin: 0 auto;
 }
 
 .get-started-wrapper {
@@ -60,6 +60,7 @@
   gap: 200px;
   height: 340px;
   margin-top: 60px;
+  scroll-margin-top: 80px;
 }
 
 .reward-terms-title {
@@ -80,4 +81,62 @@
   margin: 40px auto;
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .grow-with-autumn {
+    font-size: 2rem; /* Smaller font size for smaller screens */
+    padding: 20px;
+    text-align: center;
+  }
 
+  .poc-customer {
+    margin-top: 10px;
+    width: 90%; /* Adjust width for better fit */
+  }
+
+  .s1-wrapper {
+    height: auto; /* Let height adjust dynamically */
+    padding: 20px;
+    flex-direction: column; /* Stack content vertically */
+  }
+
+  .s1-text {
+    width: 90%; /* Adjust width for better fit */
+    font-size: 1.8rem; /* Adjust font size */
+  }
+
+  .get-started-wrapper {
+    margin-top: 20px;
+    text-align: center; /* Center align on mobile */
+  }
+
+  .get-started-button {
+    font-size: 1.5rem; /* Adjust button size */
+  }
+
+  .section-3 {
+    flex-direction: column; /* Stack content vertically */
+    gap: 20px;
+    height: auto; /* Let height adjust dynamically */
+    padding: 20px;
+    text-align: center;
+  }
+
+  .reward-terms-title {
+    margin-left: 0;
+    font-size: 2rem; /* Adjust title size */
+  }
+
+  .reward-terms-details {
+    align-items: center; /* Center align details */
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .how-to-upload-section {
+    margin: 20px auto; /* Adjust margin for smaller screens */
+  }
+
+  .footer-section {
+    padding: 20px; /* Ensure proper padding for footer */
+  }
+}
