@@ -1,7 +1,6 @@
 import "./PoC.css";
 import { Flex, Button } from "@radix-ui/themes";
 import { useRef } from "react";
-import Companies from "../../components/Companies/Companies";
 import Footer from "../../components/Footer/Footer";
 import HowToUpload from "../../components/HowToUpload/HowToUpload";
 import HowItWorks from "../../components/HowItWorks/HowItWorks";
