@@ -17,7 +17,7 @@ html, body, #root {
 .body-container {
   height: calc(100% - 80px); /* Subtract the margin-top for proper sizing */
   width: 100%; /* Full width */
-  margin-top: 60px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   flex: 1; /* Grow to fill remaining space */

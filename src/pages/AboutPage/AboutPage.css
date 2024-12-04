@@ -1,0 +1,7 @@
+.temp {
+  font-family: anton;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  flex-direction: column;
+}

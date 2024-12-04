@@ -31,7 +31,7 @@ const Footer = () => {
             <Box width="300px">
               <TextField.Root size="2" placeholder="Your work email" />
             </Box>
-            <Button ml="20px">JOIN</Button>
+            <Button ml="10px">JOIN</Button>
           </Flex>
         </Flex>
 
