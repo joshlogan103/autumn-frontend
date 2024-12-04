@@ -6,6 +6,7 @@
   align-items: center;
   padding: 20px;
   position: relative;
+  margin-left: 60px;
 }
 
 /* Title */
@@ -50,30 +51,30 @@
 /* Positioning for each node (desktop) */
 .node-1 {
   top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 52%;
+  transform: translateX(-100%);
 }
 
 .node-2 {
   top: 200px;
-  left: calc(50% + 350px);
+  left: calc(48%);
 }
 
 .node-3 {
   top: 350px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 52%;
+  transform: translateX(-100%);
 }
 
 .node-4 {
   top: 500px;
-  left: calc(50% + 350px);
+  left: calc(48%);
 }
 
 .node-5 {
   top: 650px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 52%;
+  transform: translateX(-100%);
 }
 
 /* Arrow container */
