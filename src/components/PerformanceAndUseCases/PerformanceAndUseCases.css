@@ -37,7 +37,7 @@
 }
 
 .performance-number {
-  background-color: #296e7f;
+  background-color: var(--accent-10);
   color: white;
   padding: 5px 10px; /* Reduce vertical padding */
   text-align: center;

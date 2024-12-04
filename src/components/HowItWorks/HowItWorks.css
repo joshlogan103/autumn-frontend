@@ -6,7 +6,6 @@
   align-items: center;
   padding: 20px;
   position: relative;
-  margin-left: 60px;
 }
 
 /* Title */
@@ -17,6 +16,13 @@
   text-align: center;
 }
 
+/* Flowchart image */
+
+.how-it-works-flowchart-image {
+  height: 600px;
+  margin-top: 40px;
+}
+
 /* Flowchart container */
 .flowchart-container {
   position: relative;
@@ -24,7 +30,7 @@
   height: 800px; /* Default height for larger screens */
   background-color: #ffffff;
   overflow: hidden;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: flex-start;
 }
@@ -33,7 +39,7 @@
 .node {
   position: absolute;
   width: 400px;
-  height: 100px;
+  height: 80px;
   background-color: white;
   color: black;
   border: 2px solid var(--accent-10);
@@ -43,8 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  font-size: 1rem;
+  font-size: .9rem;
   word-wrap: break-word;
 }
 
@@ -56,23 +61,23 @@
 }
 
 .node-2 {
-  top: 200px;
+  top: 180px;
   left: calc(48%);
 }
 
 .node-3 {
-  top: 350px;
+  top: 310px;
   left: 52%;
   transform: translateX(-100%);
 }
 
 .node-4 {
-  top: 500px;
+  top: 440px;
   left: calc(48%);
 }
 
 .node-5 {
-  top: 650px;
+  top: 570px;
   left: 52%;
   transform: translateX(-100%);
 }
@@ -97,6 +102,10 @@
 
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
+  .how-it-works-container {
+    margin-left: 0;
+  }
+
   .flowchart-container {
     display: flex;
     flex-direction: column; /* Stack nodes vertically */
@@ -107,6 +116,10 @@
   .how-it-works-title {
     font-size: 2rem;
     margin: 20px auto;
+  }
+
+  .how-it-works-flowchart-image {
+    display: none;
   }
 
   .node {
