@@ -13,7 +13,7 @@ body, html {
   justify-content: space-between;
   align-items: center;
   width: 100vw; /* Full viewport width */
-  height: calc(50vh - 30px);
+  height: calc(50vh - 40px);
   background-color: rgb(244, 244, 244); /* Background color */
   gap: 40px;
   overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -64,7 +64,7 @@ body, html {
   justify-content: space-between; /* Space between columns */
   align-items: center;
   width: 100vw; /* Full viewport width */
-  height: calc(50vh - 30px);
+  height: calc(50vh - 40px);
   background-color: rgb(234, 234, 234);
   padding: 0 120px; /* Padding for inner content */
   box-sizing: border-box;

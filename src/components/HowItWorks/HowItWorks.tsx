@@ -10,23 +10,23 @@ const HowItWorks = () => {
       {/* Flowchart */}
       <div className="flowchart-container">
         {/* Node 1 */}
-        <div className="node" style={{ top: "50px", left: "50%" }}>
+        <div className="node node-1">
           Champify uploads their list of strategic accounts and shares this webpage with customers.
         </div>
         {/* Node 2 */}
-        <div className="node" style={{ top: "200px", left: "calc(50% + 350px)" }}>
+        <div className="node node-2">
           Champify’s customers can upload their network in a secure, easy, and anonymized way.
         </div>
         {/* Node 3 */}
-        <div className="node" style={{ top: "350px", left: "50%" }}>
+        <div className="node node-3">
           Autumn shows Champify ONLY the companies in your network that match their strategic accounts. Autumn will never show personally identifiable information.
         </div>
         {/* Node 4 */}
-        <div className="node" style={{ top: "500px", left: "calc(50% + 350px)" }}>
+        <div className="node node-4">
           Champify reviews the anonymized matches, and can request an introduction from you, providing as much help as needed along the way.
         </div>
         {/* Node 5 */}
-        <div className="node" style={{ top: "650px", left: "50%" }}>
+        <div className="node node-5">
           Autumn tracks the progress of any introduction you make and facilitates payment via electronic Visa or Amazon gift card, or a direct donation to any charity of your choice.
         </div>
 
