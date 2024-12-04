@@ -66,10 +66,6 @@ const PoC = () => {
           <HowToUpload />
         </Flex>
 
-        <Flex className="companies-section">
-          <Companies />
-        </Flex>
-
         <div className="footer-section">
           <Footer />
         </div>
