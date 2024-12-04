@@ -7,6 +7,8 @@ const HowItWorks = () => {
       {/* Title */}
       <Flex className="how-it-works-title">HOW IT WORKS</Flex>
 
+      <img src="/images/howItWorksFlowchart.png" alt="How It Works Flowchart" className="how-it-works-flowchart-image" />
+
       {/* Flowchart */}
       <div className="flowchart-container">
         {/* Node 1 */}
@@ -46,7 +48,7 @@ const HowItWorks = () => {
           </defs>
           {/* Arrow from Node 1 to Node 2 */}
           <path
-            d="M750,100 H950 V150"
+            d="M770,90 H970 V140"
             fill="none"
             stroke="black"
             strokeWidth="2"
@@ -54,7 +56,7 @@ const HowItWorks = () => {
           />
           {/* Arrow from Node 2 to Node 3 */}
           <path
-            d="M600,250 H400 V300"
+            d="M620,220 H420 V280"
             fill="none"
             stroke="black"
             strokeWidth="2"
@@ -62,7 +64,7 @@ const HowItWorks = () => {
           />
           {/* Arrow from Node 3 to Node 4 */}
           <path
-            d="M750,400 H950 V450"
+            d="M770,350 H970 V400"
             fill="none"
             stroke="black"
             strokeWidth="2"
@@ -70,7 +72,7 @@ const HowItWorks = () => {
           />
           {/* Arrow from Node 4 to Node 5 */}
           <path
-            d="M600,550 H400 V600"
+            d="M620,480 H420 V530"
             fill="none"
             stroke="black"
             strokeWidth="2"
