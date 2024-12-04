@@ -81,6 +81,10 @@
   margin: 40px auto;
 }
 
+.how-it-works-section {
+  margin: 0 auto;
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .grow-with-autumn {

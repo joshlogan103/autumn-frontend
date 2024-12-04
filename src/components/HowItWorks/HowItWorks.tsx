@@ -46,7 +46,7 @@ const HowItWorks = () => {
           </defs>
           {/* Arrow from Node 1 to Node 2 */}
           <path
-            d="M950,100 H1150 V150"
+            d="M750,100 H950 V150"
             fill="none"
             stroke="black"
             strokeWidth="2"
@@ -54,7 +54,7 @@ const HowItWorks = () => {
           />
           {/* Arrow from Node 2 to Node 3 */}
           <path
-            d="M800,250 H600 V300"
+            d="M600,250 H400 V300"
             fill="none"
             stroke="black"
             strokeWidth="2"
@@ -62,7 +62,7 @@ const HowItWorks = () => {
           />
           {/* Arrow from Node 3 to Node 4 */}
           <path
-            d="M950,400 H1150 V450"
+            d="M750,400 H950 V450"
             fill="none"
             stroke="black"
             strokeWidth="2"
@@ -70,7 +70,7 @@ const HowItWorks = () => {
           />
           {/* Arrow from Node 4 to Node 5 */}
           <path
-            d="M800,550 H600 V600"
+            d="M600,550 H400 V600"
             fill="none"
             stroke="black"
             strokeWidth="2"
