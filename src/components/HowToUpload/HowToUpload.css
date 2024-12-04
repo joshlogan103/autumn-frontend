@@ -40,11 +40,11 @@
 
 .step-number {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .step-text {
-  line-height: 1.5;
+  font-size: 1.2rem;
   color: #333;
 }
 
@@ -52,7 +52,7 @@
 .step-divider {
   height: 1px;
   background-color: #ddd;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 /* Dialog and input styles remain unchanged */
@@ -117,4 +117,15 @@
   height: 100%;
   opacity: 0;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .step-number {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .step-text {
+    font-size: 1rem;
+  }
 }

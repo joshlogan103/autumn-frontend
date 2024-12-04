@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Dialog, Flex, Button, Text } from "@radix-ui/themes";
+import { Dialog, Flex, Button, Text, Link } from "@radix-ui/themes";
 import "./HowToUpload.css";
 
 const HowToUpload = () => {
   const steps = [
-    "Log onto LinkedIn",
+    <>
+      Log on to <Link href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</Link>
+    </>,
     "On the top right, click the down-arrow under your photo next to ‘me’",
     "Under Account, click Settings and Privacy",
     "On the left-hand side, click Data Privacy",
