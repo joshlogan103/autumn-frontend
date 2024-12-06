@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Dialog, Flex, Button, Text, Link } from "@radix-ui/themes";
+import emailjs from "@emailjs/browser";
 import "./HowToUpload.css";
 
 const HowToUpload = () => {
@@ -16,17 +17,36 @@ const HowToUpload = () => {
     "Upload here!",
   ];
 
-  const [file, setFile] = useState<File | null>(null);
+  const formRef = useRef<HTMLFormElement>(null); // Reference to the form
+  const [isSending, setIsSending] = useState(false);
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFile(e.target.files[0]);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formRef.current) {
+      alert("Form not found. Please try again.");
+      return;
     }
-  };
 
-  const handleSubmit = () => {
-    console.log("Uploading file:", file);
-    // Handle the upload logic here
+    setIsSending(true);
+
+    try {
+      // Send form data via emailjs.sendForm
+      await emailjs.sendForm(
+        "service_o8kas37",        // EmailJS Service ID
+        "template_eqgefuv",       // EmailJS Template ID
+        formRef.current,          // Form element reference
+        "UmlBP-6HgGXOHrc4x"       // EmailJS Public Key
+      );
+
+      alert("CSV sent successfully!");
+      formRef.current.reset(); // Reset the form after submission
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("Failed to send CSV. Please try again.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -45,6 +65,7 @@ const HowToUpload = () => {
           ))}
         </Flex>
       </Flex>
+
       <Dialog.Root>
         <Dialog.Trigger>
           <Button size="3" className="upload-csv">UPLOAD CSV</Button>
@@ -56,33 +77,30 @@ const HowToUpload = () => {
             Please select a CSV file to upload.
           </Dialog.Description>
 
-          <Flex direction="column" gap="3" mt="4">
-            <label className="file-input-wrapper">
-              <span className="file-input-button">Choose File</span>
-              <input
-                type="file"
-                accept=".csv"
-                onChange={handleFileChange}
-                className="file-input-hidden"
-              />
-            </label>
-            {file && (
-              <Text size="2" mt="2">
-                Selected file: {file.name}
-              </Text>
-            )}
-          </Flex>
+          <form ref={formRef} onSubmit={handleSubmit} encType="multipart/form-data">
+            <Flex direction="column" gap="3" mt="4">
+              <label className="file-input-wrapper">
+                <span className="file-input-button">Choose File</span>
+                <input
+                  type="file"
+                  name="my_file" // Must match the parameter name in your EmailJS template
+                  accept=".csv"
+                  className="file-input-hidden"
+                />
+              </label>
+            </Flex>
 
-          <Flex gap="3" mt="4" justify="end">
-            <Dialog.Close>
-              <Button variant="surface" color="gray">
-                Cancel
+            <Flex gap="3" mt="4" justify="end">
+              <Dialog.Close>
+                <Button variant="surface" color="gray" disabled={isSending}>
+                  Cancel
+                </Button>
+              </Dialog.Close>
+              <Button variant="solid" type="submit" disabled={isSending}>
+                {isSending ? "Sending..." : "Submit"}
               </Button>
-            </Dialog.Close>
-            <Button variant="solid" onClick={handleSubmit}>
-              Submit
-            </Button>
-          </Flex>
+            </Flex>
+          </form>
         </Dialog.Content>
       </Dialog.Root>
     </Flex>
