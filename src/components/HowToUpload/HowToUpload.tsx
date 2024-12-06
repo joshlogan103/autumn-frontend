@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Dialog, Flex, Button, Text, Link } from "@radix-ui/themes";
+import { Dialog, Flex, Button, Link } from "@radix-ui/themes";
 import emailjs from "@emailjs/browser";
 import "./HowToUpload.css";
 
