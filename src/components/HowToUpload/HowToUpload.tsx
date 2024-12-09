@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Dialog, Flex, Button, Link } from "@radix-ui/themes";
+import { Dialog, Flex, Button, Link, Text } from "@radix-ui/themes";
 import emailjs from "@emailjs/browser";
 import "./HowToUpload.css";
 
@@ -19,12 +19,37 @@ const HowToUpload = () => {
 
   const formRef = useRef<HTMLFormElement>(null); // Reference to the form
   const [isSending, setIsSending] = useState(false);
+  const [selectedFileName, setSelectedFileName] = useState<string | null>(null); // Track the selected file name
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files && e.target.files[0];
+    if (file) {
+      setSelectedFileName(file.name); // Store the file name
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!formRef.current) {
       alert("Form not found. Please try again.");
+      return;
+    }
+
+    // Extract form data
+    const formData = new FormData(formRef.current);
+    const userName = formData.get("user_name") as string;
+    const userEmail = formData.get("user_email") as string;
+    const file = formData.get("my_file");
+
+    // Check for missing fields
+    if (!userName || !userEmail || !file) {
+      const missingFields = [];
+      if (!userName) missingFields.push("Name");
+      if (!userEmail) missingFields.push("Email");
+      if (!file) missingFields.push("CSV file");
+
+      alert(`Please complete the following required field(s): ${missingFields.join(", ")}`);
       return;
     }
 
@@ -41,6 +66,7 @@ const HowToUpload = () => {
 
       alert("CSV sent successfully!");
       formRef.current.reset(); // Reset the form after submission
+      setSelectedFileName(null); // Clear the file name
     } catch (error) {
       console.error("Error sending email:", error);
       alert("Failed to send CSV. Please try again.");
@@ -74,20 +100,45 @@ const HowToUpload = () => {
         <Dialog.Content maxWidth="450px">
           <Dialog.Title>Upload Your CSV</Dialog.Title>
           <Dialog.Description>
-            Please select a CSV file to upload.
+            Please provide your details and select a CSV file to upload.
           </Dialog.Description>
 
           <form ref={formRef} onSubmit={handleSubmit} encType="multipart/form-data">
             <Flex direction="column" gap="3" mt="4">
+              <label>
+                <span>Name:</span>
+                <input
+                  type="text"
+                  name="user_name" // Must match the parameter name in your EmailJS template
+                  required
+                  className="text-input"
+                />
+              </label>
+              <label>
+                <span>Email:</span>
+                <input
+                  type="email"
+                  name="user_email" // Must match the parameter name in your EmailJS template
+                  required
+                  className="text-input"
+                />
+              </label>
               <label className="file-input-wrapper">
                 <span className="file-input-button">Choose File</span>
                 <input
                   type="file"
                   name="my_file" // Must match the parameter name in your EmailJS template
                   accept=".csv"
+                  required
                   className="file-input-hidden"
+                  onChange={handleFileChange}
                 />
               </label>
+              {selectedFileName && (
+                <Text size="2" mt="2" className="selected-file">
+                  Selected file: {selectedFileName}
+                </Text>
+              )}
             </Flex>
 
             <Flex gap="3" mt="4" justify="end">

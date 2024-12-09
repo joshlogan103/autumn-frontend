@@ -7,7 +7,7 @@ const HowItWorks = () => {
       {/* Title */}
       <Flex className="how-it-works-title">HOW IT WORKS</Flex>
 
-      <img src="/images/howItWorksFlowchart.png" alt="How It Works Flowchart" className="how-it-works-flowchart-image" />
+      <img src="/images/howItWorksFlowchart2.png" alt="How It Works Flowchart" className="how-it-works-flowchart-image" />
 
       {/* Flowchart */}
       <div className="flowchart-container">
@@ -21,7 +21,7 @@ const HowItWorks = () => {
         </div>
         {/* Node 3 */}
         <div className="node node-3">
-          Autumn shows Champify ONLY the companies in your network that match their strategic accounts. Autumn will never show personally identifiable information.
+          Autumn shows Champify the Company name and Role Title for anyone in your network within their strategic account list. Autumn will never show personally identifiable information.
         </div>
         {/* Node 4 */}
         <div className="node node-4">
@@ -29,7 +29,7 @@ const HowItWorks = () => {
         </div>
         {/* Node 5 */}
         <div className="node node-5">
-          Autumn tracks the progress of any introduction you make and facilitates payment via electronic Visa or Amazon gift card, or a direct donation to any charity of your choice.
+          Autumn tracks the progress of any introduction you make and facilitates payment once complete.
         </div>
 
         {/* Arrows */}
