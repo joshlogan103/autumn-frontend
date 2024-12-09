@@ -1,11 +1,11 @@
-import "./PoC.css";
+import "./PoC2.css";
 import { Flex } from "@radix-ui/themes";
 import { useRef } from "react";
 import Footer from "../../components/Footer/Footer";
 import HowToUpload from "../../components/HowToUpload/HowToUpload";
 import HowItWorks from "../../components/HowItWorks/HowItWorks";
 
-const PoC = () => {
+const PoC2 = () => {
   const section3Ref = useRef<HTMLDivElement>(null);
 
   // const handleGetStarted = () => {
@@ -22,7 +22,7 @@ const PoC = () => {
           <Flex className="grow-with-autumn">GROW WITH AUTUMN</Flex>
           <Flex className="poc-customer">
             <img
-              src="/images/champifyLogo.png"
+              src="/images/scaleroLogo.webp"
               alt="docusignLogo"
               className="company-logo-alt"
             />
@@ -73,4 +73,4 @@ const PoC = () => {
   );
 };
 
-export default PoC;
+export default PoC2;

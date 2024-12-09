@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar/NavBar";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import PoC from "./pages/PoC/PoC";
+import PoC2 from "./pages/PoC2/PoC2"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/poc" element={<PoC />} />
+            <Route path="/poc2" element={<PoC2 />} />
           </Routes>
         </div>
       </div>
