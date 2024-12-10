@@ -121,7 +121,7 @@
 
 .text-input {
   width: 100%;
-  padding: 10px;
+  padding: 10px 0px;
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
