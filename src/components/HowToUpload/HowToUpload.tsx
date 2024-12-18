@@ -6,7 +6,14 @@ import "./HowToUpload.css";
 const HowToUpload = () => {
   const steps = [
     <>
-      Log on to <Link href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</Link>
+      Log on to{" "}
+      <Link
+        href="https://www.linkedin.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </Link>
     </>,
     "On the top right, click the down-arrow under your photo next to ‘me’",
     "Under Account, click Settings and Privacy",
@@ -20,6 +27,8 @@ const HowToUpload = () => {
   const formRef = useRef<HTMLFormElement>(null); // Reference to the form
   const [isSending, setIsSending] = useState(false);
   const [selectedFileName, setSelectedFileName] = useState<string | null>(null); // Track the selected file name
+  const [uploadDialogOpen, setUploadDialogOpen] = useState(false); // Controls upload form dialog
+  const [successDialogOpen, setSuccessDialogOpen] = useState(false); // Controls success message dialog
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files && e.target.files[0];
@@ -32,7 +41,6 @@ const HowToUpload = () => {
     e.preventDefault();
 
     if (!formRef.current) {
-      alert("Form not found. Please try again.");
       return;
     }
 
@@ -58,13 +66,16 @@ const HowToUpload = () => {
     try {
       // Send form data via emailjs.sendForm
       await emailjs.sendForm(
-        "service_o8kas37",        // EmailJS Service ID
-        "template_eqgefuv",       // EmailJS Template ID
-        formRef.current,          // Form element reference
-        "UmlBP-6HgGXOHrc4x"       // EmailJS Public Key
+        "service_o8kas37", // EmailJS Service ID
+        "template_eqgefuv", // EmailJS Template ID
+        formRef.current, // Form element reference
+        "UmlBP-6HgGXOHrc4x" // EmailJS Public Key
       );
 
-      alert("CSV sent successfully!");
+      // Close the upload form and open success dialog
+      setUploadDialogOpen(false);
+      setSuccessDialogOpen(true);
+
       formRef.current.reset(); // Reset the form after submission
       setSelectedFileName(null); // Clear the file name
     } catch (error) {
@@ -92,9 +103,12 @@ const HowToUpload = () => {
         </Flex>
       </Flex>
 
-      <Dialog.Root>
+      {/* Upload CSV Dialog */}
+      <Dialog.Root open={uploadDialogOpen} onOpenChange={setUploadDialogOpen}>
         <Dialog.Trigger>
-          <Button size="3" className="upload-csv">UPLOAD CSV</Button>
+          <Button size="3" className="upload-csv">
+            UPLOAD CSV
+          </Button>
         </Dialog.Trigger>
 
         <Dialog.Content maxWidth="450px">
@@ -109,7 +123,7 @@ const HowToUpload = () => {
                 <span>Name:</span>
                 <input
                   type="text"
-                  name="user_name" // Must match the parameter name in your EmailJS template
+                  name="user_name"
                   required
                   className="text-input"
                 />
@@ -118,7 +132,7 @@ const HowToUpload = () => {
                 <span>Email:</span>
                 <input
                   type="email"
-                  name="user_email" // Must match the parameter name in your EmailJS template
+                  name="user_email"
                   required
                   className="text-input"
                 />
@@ -127,7 +141,7 @@ const HowToUpload = () => {
                 <span className="file-input-button">Choose File</span>
                 <input
                   type="file"
-                  name="my_file" // Must match the parameter name in your EmailJS template
+                  name="my_file"
                   accept=".csv"
                   required
                   className="file-input-hidden"
@@ -152,6 +166,19 @@ const HowToUpload = () => {
               </Button>
             </Flex>
           </form>
+        </Dialog.Content>
+      </Dialog.Root>
+
+      {/* Success Dialog */}
+      <Dialog.Root open={successDialogOpen} onOpenChange={setSuccessDialogOpen}>
+        <Dialog.Content maxWidth="450px">
+          <Dialog.Title>Upload Successful</Dialog.Title>
+          <Dialog.Description>
+            Your file has been successfully uploaded. Thank you!
+          </Dialog.Description>
+          <Flex justify="end" mt="4">
+            <Button onClick={() => setSuccessDialogOpen(false)}>Close</Button>
+          </Flex>
         </Dialog.Content>
       </Dialog.Root>
     </Flex>
