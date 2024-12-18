@@ -23,12 +23,12 @@
   margin-top: 40px;
   box-shadow: none;
   clip-path: inset(0 0 12px 0);
-  /* display: none; */
+  display: none;
 }
 
 /* Flowchart container */
 .flowchart-container {
-  display: none;
+  /* display: none; */
   position: relative;
   width: 100%;
   height: 800px; /* Default height for larger screens */
@@ -83,6 +83,10 @@
   top: 570px;
   left: 52%;
   transform: translateX(-100%);
+}
+
+.bold {
+  font-weight: 800;
 }
 
 /* Arrow container */

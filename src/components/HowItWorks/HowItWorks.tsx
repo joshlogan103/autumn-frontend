@@ -1,7 +1,11 @@
-import { Flex } from "@radix-ui/themes";
+import { Flex, Text } from "@radix-ui/themes";
 import "./HowItWorks.css";
 
-const HowItWorks = () => {
+interface HowItWorksProps {
+  companyName: string;
+}
+
+const HowItWorks: React.FC<HowItWorksProps> = ({ companyName }) => {
   return (
     <Flex className="how-it-works-container">
       {/* Title */}
@@ -13,23 +17,23 @@ const HowItWorks = () => {
       <div className="flowchart-container">
         {/* Node 1 */}
         <div className="node node-1">
-          Champify uploads their list of strategic accounts and shares this webpage with customers.
+          <Text>{companyName} uploads their list of strategic accounts and shares this webpage with customers.</Text>
         </div>
         {/* Node 2 */}
         <div className="node node-2">
-          Champify’s customers can upload their network in a secure, easy, and anonymized way.
+          <Text>{companyName}’s customers can upload their network in a <Text className="bold">secure, easy, and anonymized</Text> way.</Text>
         </div>
         {/* Node 3 */}
         <div className="node node-3">
-          Autumn shows Champify the Company name and Role Title for anyone in your network within their strategic account list. Autumn will never show personally identifiable information.
+          <Text>Autumn shows {companyName} the Company Name and Role Title for anyone in your network within their strategic account list. <Text className="bold">Autumn will never show personally identifiable information.</Text></Text>
         </div>
         {/* Node 4 */}
         <div className="node node-4">
-          Champify reviews the anonymized matches, and can request an introduction from you, providing as much help as needed along the way.
+        <Text>{companyName} reviews the anonymized matches, and can request an introduction from you, providing as much help as needed along the way.</Text>
         </div>
         {/* Node 5 */}
         <div className="node node-5">
-          Autumn tracks the progress of any introduction you make and facilitates payment once complete.
+        <Text>Autumn tracks the progress of any introduction you make and facilitates payment once complete.</Text>
         </div>
 
         {/* Arrows */}

@@ -8,13 +8,6 @@ import HowItWorks from "../../components/HowItWorks/HowItWorks";
 const PoC2 = () => {
   const section3Ref = useRef<HTMLDivElement>(null);
 
-  // const handleGetStarted = () => {
-  //   if (section3Ref.current) {
-  //     section3Ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
-  //   }
-  // };
-  
-
   return (
     <>
       <div className="page-wrapper">
@@ -34,11 +27,6 @@ const PoC2 = () => {
               AUTUMN HELPS HAPPY CUSTOMERS MAKE REFERRALS AND GET COMPENSATED
             </Flex>
           </Flex>
-          {/* <div className="get-started-wrapper">
-            <Button size="3" className="get-started-button" onClick={handleGetStarted}>
-              GET STARTED
-            </Button>
-          </div> */}
         </Flex>
         <Flex className="section-3" ref={section3Ref}>
           <Flex className="reward-terms-title">
@@ -46,19 +34,22 @@ const PoC2 = () => {
           </Flex>
           <Flex className="reward-terms-details">
             <div className="reward-term-item">
-            <strong>$X00</strong> for a completed Introduction
+              <strong>$25 </strong>for uploading your connections
             </div>
             <div className="reward-term-item">
-            <strong>Y% </strong>of the first year contract value for any facilitated purchase
+              <strong>$250</strong> for a completed Introduction
             </div>
             <div className="reward-term-item">
-            Visa gift-card, amazon gift-card, or a donation to the charity of your choice
+              <strong>20% </strong>of the value of the first three months of an engagement
+            </div>
+            <div className="reward-term-item">
+              Visa gift-card, amazon gift-card, or a donation to the charity of your choice
             </div>
           </Flex>
         </Flex>
 
         <Flex className="how-it-works-section">
-          <HowItWorks />
+          <HowItWorks companyName="Scalero" /> {/* Pass the company name as a prop */}
         </Flex>
 
         <Flex className="how-to-upload-section">
