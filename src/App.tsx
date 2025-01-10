@@ -15,7 +15,7 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/poc" element={<PoC />} />
-            <Route path="/poc2" element={<PoC2 />} />
+            <Route path="/scalero" element={<PoC2 />} />
           </Routes>
         </div>
       </div>
