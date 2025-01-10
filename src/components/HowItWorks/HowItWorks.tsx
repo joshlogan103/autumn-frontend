@@ -11,30 +11,30 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ companyName }) => {
       {/* Title */}
       <Flex className="how-it-works-title">HOW IT WORKS</Flex>
 
-      <img src="/images/howItWorksFlowchart2.png" alt="How It Works Flowchart" className="how-it-works-flowchart-image" />
+      <img src="/images/howItWorksFlowchartScalero2.png" alt="How It Works Flowchart" className="how-it-works-flowchart-image" />
 
       {/* Flowchart */}
       <div className="flowchart-container">
         {/* Node 1 */}
         <div className="node node-1">
-          <Text>{companyName} uploads their list of strategic accounts and shares this webpage with customers.</Text>
+        <Text>{companyName}’s customers can upload their network in a <Text className="bold">secure, easy, and anonymized</Text> way.</Text>
         </div>
         {/* Node 2 */}
         <div className="node node-2">
-          <Text>{companyName}’s customers can upload their network in a <Text className="bold">secure, easy, and anonymized</Text> way.</Text>
+        <Text>Autumn shows {companyName} the Company Name and Role Title for anyone in your network within their strategic account list. <Text className="bold">Autumn will never show personally identifiable information.</Text></Text>
         </div>
         {/* Node 3 */}
         <div className="node node-3">
-          <Text>Autumn shows {companyName} the Company Name and Role Title for anyone in your network within their strategic account list. <Text className="bold">Autumn will never show personally identifiable information.</Text></Text>
+        <Text>{companyName} reviews the anonymized matches, and can request an introduction from you, providing as much help as needed along the way.</Text>
         </div>
         {/* Node 4 */}
         <div className="node node-4">
-        <Text>{companyName} reviews the anonymized matches, and can request an introduction from you, providing as much help as needed along the way.</Text>
-        </div>
-        {/* Node 5 */}
-        <div className="node node-5">
         <Text>Autumn tracks the progress of any introduction you make and facilitates payment once complete.</Text>
         </div>
+        {/* Node 5 */}
+        {/* <div className="node node-5">
+        <Text>Autumn tracks the progress of any introduction you make and facilitates payment once complete.</Text>
+        </div> */}
 
         {/* Arrows */}
         <svg className="arrows">
@@ -75,13 +75,13 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ companyName }) => {
             markerEnd="url(#arrowhead)"
           />
           {/* Arrow from Node 4 to Node 5 */}
-          <path
+          {/* <path
             d="M620,480 H420 V530"
             fill="none"
             stroke="black"
             strokeWidth="2"
             markerEnd="url(#arrowhead)"
-          />
+          /> */}
         </svg>
       </div>
     </Flex>
