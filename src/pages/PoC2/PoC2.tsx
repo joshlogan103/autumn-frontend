@@ -33,17 +33,17 @@ const PoC2 = () => {
             REWARD TERMS
           </Flex>
           <Flex className="reward-terms-details">
-            <div className="reward-term-item">
+            {/* <div className="reward-term-item">
               <strong>$25 </strong>for uploading your connections
+            </div> */}
+            <div className="reward-term-item">
+              <strong>$50</strong> for a completed Introduction
             </div>
             <div className="reward-term-item">
-              <strong>$250</strong> for a completed Introduction
+              <strong>10% </strong>of the value of the first month of an engagement
             </div>
             <div className="reward-term-item">
-              <strong>20% </strong>of the value of the first three months of an engagement
-            </div>
-            <div className="reward-term-item">
-              Visa gift-card, amazon gift-card, or a donation to the charity of your choice
+              Processed through payroll
             </div>
           </Flex>
         </Flex>
