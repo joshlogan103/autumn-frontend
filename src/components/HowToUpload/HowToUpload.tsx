@@ -3,15 +3,15 @@ import { Dialog, Flex, Button, Link, Text } from "@radix-ui/themes";
 import emailjs from "@emailjs/browser";
 import "./HowToUpload.css";
 
-const HowToUpload = () => {
+interface HowToUploadProps {
+  companyName: string;
+}
+
+const HowToUpload: React.FC<HowToUploadProps> = ({ companyName }) => {
   const steps = [
     <>
       Log on to{" "}
-      <Link
-        href="https://www.linkedin.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <Link href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
         LinkedIn
       </Link>
     </>,
@@ -24,16 +24,16 @@ const HowToUpload = () => {
     "Upload here!",
   ];
 
-  const formRef = useRef<HTMLFormElement>(null); // Reference to the form
+  const formRef = useRef<HTMLFormElement>(null);
   const [isSending, setIsSending] = useState(false);
-  const [selectedFileName, setSelectedFileName] = useState<string | null>(null); // Track the selected file name
-  const [uploadDialogOpen, setUploadDialogOpen] = useState(false); // Controls upload form dialog
-  const [successDialogOpen, setSuccessDialogOpen] = useState(false); // Controls success message dialog
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [uploadDialogOpen, setUploadDialogOpen] = useState(false);
+  const [successDialogOpen, setSuccessDialogOpen] = useState(false);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files && e.target.files[0];
     if (file) {
-      setSelectedFileName(file.name); // Store the file name
+      setSelectedFile(file);
     }
   };
 
@@ -48,7 +48,7 @@ const HowToUpload = () => {
     const formData = new FormData(formRef.current);
     const userName = formData.get("user_name") as string;
     const userEmail = formData.get("user_email") as string;
-    const file = formData.get("my_file");
+    const file = selectedFile;
 
     // Check for missing fields
     if (!userName || !userEmail || !file) {
@@ -63,27 +63,39 @@ const HowToUpload = () => {
 
     setIsSending(true);
 
-    try {
-      // Send form data via emailjs.sendForm
-      await emailjs.sendForm(
-        "service_o8kas37", // EmailJS Service ID
-        "template_eqgefuv", // EmailJS Template ID
-        formRef.current, // Form element reference
-        "UmlBP-6HgGXOHrc4x" // EmailJS Public Key
-      );
+    // Read file as Base64 for EmailJS attachment
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = async () => {
+      try {
+        await emailjs.send(
+          "service_o8kas37", // EmailJS Service ID
+          "template_eqgefuv", // EmailJS Template ID
+          {
+            user_name: userName,
+            user_email: userEmail,
+            company_name: companyName, // Send company name to email
+            file_name: file.name,
+            attachment: reader.result, // Send file as Base64
+          },
+          "UmlBP-6HgGXOHrc4x" // EmailJS Public Key
+        );
 
-      // Close the upload form and open success dialog
-      setUploadDialogOpen(false);
-      setSuccessDialogOpen(true);
-
-      formRef.current.reset(); // Reset the form after submission
-      setSelectedFileName(null); // Clear the file name
-    } catch (error) {
-      console.error("Error sending email:", error);
-      alert("Failed to send CSV. Please try again.");
-    } finally {
-      setIsSending(false);
-    }
+        // Close the upload form and open success dialog
+        setUploadDialogOpen(false);
+        setSuccessDialogOpen(true);
+        
+        if (formRef.current) {
+          formRef.current.reset(); // Reset the form after submission
+        }
+        setSelectedFile(null); // Clear the file
+      } catch (error) {
+        console.error("Error sending email:", error);
+        alert("Failed to send CSV. Please try again.");
+      } finally {
+        setIsSending(false);
+      }
+    };
   };
 
   return (
@@ -106,9 +118,7 @@ const HowToUpload = () => {
       {/* Upload CSV Dialog */}
       <Dialog.Root open={uploadDialogOpen} onOpenChange={setUploadDialogOpen}>
         <Dialog.Trigger>
-          <Button size="3" className="upload-csv">
-            UPLOAD CSV
-          </Button>
+          <Button size="3" className="upload-csv">UPLOAD CSV</Button>
         </Dialog.Trigger>
 
         <Dialog.Content maxWidth="450px">
@@ -121,21 +131,11 @@ const HowToUpload = () => {
             <Flex direction="column" gap="3" mt="4">
               <label>
                 <span>Name:</span>
-                <input
-                  type="text"
-                  name="user_name"
-                  required
-                  className="text-input"
-                />
+                <input type="text" name="user_name" required className="text-input" />
               </label>
               <label>
                 <span>Email:</span>
-                <input
-                  type="email"
-                  name="user_email"
-                  required
-                  className="text-input"
-                />
+                <input type="email" name="user_email" required className="text-input" />
               </label>
               <label className="file-input-wrapper">
                 <span className="file-input-button">Choose File</span>
@@ -148,18 +148,16 @@ const HowToUpload = () => {
                   onChange={handleFileChange}
                 />
               </label>
-              {selectedFileName && (
+              {selectedFile && (
                 <Text size="2" mt="2" className="selected-file">
-                  Selected file: {selectedFileName}
+                  Selected file: {selectedFile.name}
                 </Text>
               )}
             </Flex>
 
             <Flex gap="3" mt="4" justify="end">
               <Dialog.Close>
-                <Button variant="surface" color="gray" disabled={isSending}>
-                  Cancel
-                </Button>
+                <Button variant="surface" color="gray" disabled={isSending}>Cancel</Button>
               </Dialog.Close>
               <Button variant="solid" type="submit" disabled={isSending}>
                 {isSending ? "Sending..." : "Submit"}
