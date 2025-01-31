@@ -26,14 +26,14 @@ const HowToUpload: React.FC<HowToUploadProps> = ({ companyName }) => {
 
   const formRef = useRef<HTMLFormElement>(null);
   const [isSending, setIsSending] = useState(false);
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [selectedFileName, setSelectedFileName] = useState<string | null>(null);
   const [uploadDialogOpen, setUploadDialogOpen] = useState(false);
   const [successDialogOpen, setSuccessDialogOpen] = useState(false);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files && e.target.files[0];
     if (file) {
-      setSelectedFile(file);
+      setSelectedFileName(file.name);
     }
   };
 
@@ -44,58 +44,36 @@ const HowToUpload: React.FC<HowToUploadProps> = ({ companyName }) => {
       return;
     }
 
-    // Extract form data
-    const formData = new FormData(formRef.current);
-    const userName = formData.get("user_name") as string;
-    const userEmail = formData.get("user_email") as string;
-    const file = selectedFile;
-
     // Check for missing fields
-    if (!userName || !userEmail || !file) {
-      const missingFields = [];
-      if (!userName) missingFields.push("Name");
-      if (!userEmail) missingFields.push("Email");
-      if (!file) missingFields.push("CSV file");
-
-      alert(`Please complete the following required field(s): ${missingFields.join(", ")}`);
+    const formData = new FormData(formRef.current);
+    if (!formData.get("user_name") || !formData.get("user_email") || !formData.get("my_file")) {
+      alert("Please complete all required fields.");
       return;
     }
 
     setIsSending(true);
 
-    // Read file as Base64 for EmailJS attachment
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = async () => {
-      try {
-        await emailjs.send(
-          "service_o8kas37", // EmailJS Service ID
-          "template_eqgefuv", // EmailJS Template ID
-          {
-            user_name: userName,
-            user_email: userEmail,
-            company_name: companyName, // Send company name to email
-            file_name: file.name,
-            attachment: reader.result, // Send file as Base64
-          },
-          "UmlBP-6HgGXOHrc4x" // EmailJS Public Key
-        );
+    try {
+      // Send form data via emailjs.sendForm
+      await emailjs.sendForm(
+        "service_o8kas37", // EmailJS Service ID
+        "template_eqgefuv", // EmailJS Template ID
+        formRef.current, // Form element reference
+        "UmlBP-6HgGXOHrc4x" // EmailJS Public Key
+      );
 
-        // Close the upload form and open success dialog
-        setUploadDialogOpen(false);
-        setSuccessDialogOpen(true);
-        
-        if (formRef.current) {
-          formRef.current.reset(); // Reset the form after submission
-        }
-        setSelectedFile(null); // Clear the file
-      } catch (error) {
-        console.error("Error sending email:", error);
-        alert("Failed to send CSV. Please try again.");
-      } finally {
-        setIsSending(false);
-      }
-    };
+      // Close the upload form and open success dialog
+      setUploadDialogOpen(false);
+      setSuccessDialogOpen(true);
+
+      formRef.current.reset(); // Reset the form
+      setSelectedFileName(null); // Clear the selected file
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("Failed to send CSV. Please try again.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -137,6 +115,8 @@ const HowToUpload: React.FC<HowToUploadProps> = ({ companyName }) => {
                 <span>Email:</span>
                 <input type="email" name="user_email" required className="text-input" />
               </label>
+              {/* Hidden input for company name */}
+              <input type="hidden" name="company_name" value={companyName} />
               <label className="file-input-wrapper">
                 <span className="file-input-button">Choose File</span>
                 <input
@@ -148,9 +128,9 @@ const HowToUpload: React.FC<HowToUploadProps> = ({ companyName }) => {
                   onChange={handleFileChange}
                 />
               </label>
-              {selectedFile && (
+              {selectedFileName && (
                 <Text size="2" mt="2" className="selected-file">
-                  Selected file: {selectedFile.name}
+                  Selected file: {selectedFileName}
                 </Text>
               )}
             </Flex>
