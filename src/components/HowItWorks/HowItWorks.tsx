@@ -3,15 +3,17 @@ import "./HowItWorks.css";
 
 interface HowItWorksProps {
   companyName: string;
+  companyFlowChart: string;
 }
 
-const HowItWorks: React.FC<HowItWorksProps> = ({ companyName }) => {
+const HowItWorks: React.FC<HowItWorksProps> = ({ companyName, companyFlowChart }) => {
   return (
     <Flex className="how-it-works-container">
       {/* Title */}
       <Flex className="how-it-works-title">HOW IT WORKS</Flex>
 
-      <img src="/images/howItWorksFlowchartScalero2.png" alt="How It Works Flowchart" className="how-it-works-flowchart-image" />
+      <img src={companyFlowChart}
+      alt="How It Works Flowchart" className="how-it-works-flowchart-image" />
 
       {/* Flowchart */}
       <div className="flowchart-container">
@@ -21,7 +23,8 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ companyName }) => {
         </div>
         {/* Node 2 */}
         <div className="node node-2">
-        <Text>Autumn shows {companyName} the Company Name and Role Title for anyone in your network within their strategic account list. <Text className="bold">Autumn will never show personally identifiable information.</Text></Text>
+        <Text>Autumn shows {companyName} the Company Name and Role Title for anyone in your network within their strategic account list. 
+        <Text className="bold"> Autumn will never show personally identifiable information.</Text></Text>
         </div>
         {/* Node 3 */}
         <div className="node node-3">

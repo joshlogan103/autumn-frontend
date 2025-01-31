@@ -49,7 +49,7 @@ const PoC2 = () => {
         </Flex>
 
         <Flex className="how-it-works-section">
-          <HowItWorks companyName="Scalero" /> {/* Pass the company name as a prop */}
+          <HowItWorks companyName="Scalero" companyFlowChart="/images/howItWorksFlowchartScalero2.png" /> {/* Pass the company name as a prop */}
         </Flex>
 
         <Flex className="how-to-upload-section">

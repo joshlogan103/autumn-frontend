@@ -1,11 +1,11 @@
-import "./PoC.css";
+import "./PoC3.css";
 import { Flex } from "@radix-ui/themes";
 import { useRef } from "react";
 import Footer from "../../components/Footer/Footer";
 import HowToUpload from "../../components/HowToUpload/HowToUpload";
 import HowItWorks from "../../components/HowItWorks/HowItWorks";
 
-const PoC = () => {
+const PoC3 = () => {
   const section3Ref = useRef<HTMLDivElement>(null);
 
   return (
@@ -15,7 +15,7 @@ const PoC = () => {
           <Flex className="grow-with-autumn">GROW WITH AUTUMN</Flex>
           <Flex className="poc-customer">
             <img
-              src="/images/champifyLogo.png"
+              src="/images/SimonDataVector.png"
               alt="docusignLogo"
               className="company-logo-alt"
             />
@@ -34,13 +34,13 @@ const PoC = () => {
           </Flex>
           <Flex className="reward-terms-details">
             <div className="reward-term-item">
-              <strong>$25 </strong>for uploading your connections
+              <strong>$50 </strong>for uploading your connections
             </div>
             <div className="reward-term-item">
-              <strong>$250</strong> for a completed Introduction
+              <strong>$1,000</strong> for a completed Introduction
             </div>
             <div className="reward-term-item">
-              <strong>20% </strong>of the first year contract value for any facilitated purchase
+              <strong>15% </strong>of the value of the first year of a signed contract
             </div>
             <div className="reward-term-item">
               Visa gift-card, amazon gift-card, or a donation to the charity of your choice
@@ -49,7 +49,7 @@ const PoC = () => {
         </Flex>
 
         <Flex className="how-it-works-section">
-          <HowItWorks companyName="Champify" companyFlowChart="/images/ChampifyFlowChart.png" /> {/* Pass the company name as a prop */}
+          <HowItWorks companyName="Simon Data" companyFlowChart="/images/SimonFlowChart.png" /> {/* Pass the company name as a prop */}
         </Flex>
 
         <Flex className="how-to-upload-section">
@@ -64,4 +64,4 @@ const PoC = () => {
   );
 };
 
-export default PoC;
+export default PoC3;

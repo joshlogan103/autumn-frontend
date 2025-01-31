@@ -22,9 +22,9 @@ const NavBar = () => {
               <DropdownMenu.Item asChild>
                 <NavLink to="/">Home</NavLink>
               </DropdownMenu.Item>
-              <DropdownMenu.Item asChild>
+              {/* <DropdownMenu.Item asChild>
                 <NavLink to="/about">About Us</NavLink>
-              </DropdownMenu.Item>
+              </DropdownMenu.Item> */}
             </DropdownMenu.Content>
           </DropdownMenu.Root>
         </div>
