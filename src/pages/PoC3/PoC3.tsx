@@ -53,7 +53,7 @@ const PoC3 = () => {
         </Flex>
 
         <Flex className="how-to-upload-section">
-          <HowToUpload />
+          <HowToUpload companyName="Simon Data"/>
         </Flex>
 
         <div className="footer-section">

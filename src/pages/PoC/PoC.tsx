@@ -53,7 +53,7 @@ const PoC = () => {
         </Flex>
 
         <Flex className="how-to-upload-section">
-          <HowToUpload />
+          <HowToUpload companyName="Champify"/>
         </Flex>
 
         <div className="footer-section">
